@@ -14,9 +14,11 @@ public interface SearchService {
      * 获取轮播图的url列表
      * @return
      */
-    Response<List<ImageDTO>> getPictures();
+    Response<List<ImageDTO>> getPictures(String type);
 
     Response<List<HealthKnowledgeDTO>> getHealthKnowledge();
 
     Response<List<DepartmentDTO>> getAllDepartments();
+
+    Response<List<DepartmentDTO>> search(String keywords);
 }

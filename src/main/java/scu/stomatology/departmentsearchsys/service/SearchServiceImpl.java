@@ -26,8 +26,8 @@ public class SearchServiceImpl implements SearchService{
 
 
     @Override
-    public Response<List<ImageDTO>> getPictures() {
-        return imageRepository.getPictureList();
+    public Response<List<ImageDTO>> getPictures(String type) {
+        return imageRepository.getPictureList(type);
     }
 
     @Override
@@ -38,5 +38,10 @@ public class SearchServiceImpl implements SearchService{
     @Override
     public Response<List<DepartmentDTO>> getAllDepartments() {
         return departmentRepository.getAllDepartments();
+    }
+
+    @Override
+    public Response<List<DepartmentDTO>> search(String keywords) {
+        return departmentRepository.search(keywords);
     }
 }

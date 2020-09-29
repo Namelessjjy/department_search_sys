@@ -19,8 +19,8 @@ public class ImageRepository {
     private ImageJpaRepository imageJpaRepository;
 
 
-    public Response<List<ImageDTO>> getPictureList() {
-        List<Image> list = imageJpaRepository.findAll();
+    public Response<List<ImageDTO>> getPictureList(String type) {
+        List<Image> list = imageJpaRepository.findByType(type);
         List<ImageDTO> imageDTOS = list.stream().map(image -> {
             ImageDTO imageDTO = new ImageDTO();
             BeanUtils.copyProperties(imageDTO, image);
